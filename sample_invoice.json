@@ -1,0 +1,25 @@
+{
+  "interchange": {
+    "senderId": "UMERCO",
+    "recipientId": "ACMERETAIL",
+    "date": "260718",
+    "time": "1200",
+    "controlRef": "1001"
+  },
+  "invoice": {
+    "invoiceNumber": "INV-2026-0042",
+    "invoiceDate": "20260718",
+    "currency": "EUR",
+    "supplier": { "id": "5412345000013", "name": "Umerco Supplies Ltd" },
+    "buyer": { "id": "4023456000017", "name": "Acme Retail GmbH" },
+    "lines": [
+      { "lineNumber": "1", "itemCode": "SKU-001", "description": "Widget A", "quantity": "100", "unitPrice": "9.50", "lineAmount": "950.00" },
+      { "lineNumber": "2", "itemCode": "SKU-002", "description": "Widget B", "quantity": "40", "unitPrice": "12.25", "lineAmount": "490.00" },
+      { "lineNumber": "3", "itemCode": "SKU-003", "description": "Gadget C", "quantity": "10", "unitPrice": "31.00", "lineAmount": "310.00" }
+    ],
+    "totalAmount": "1750.00",
+    "taxRate": "20",
+    "taxAmount": "350.00",
+    "grandTotal": "2100.00"
+  }
+}
