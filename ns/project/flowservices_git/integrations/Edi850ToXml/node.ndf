@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">unknown</value>
+  <value name="svc_sigtype">unknown</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="node_subtype">unknown</value>
+      <value name="is_public">false</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      </array>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="node_subtype">unknown</value>
+      <value name="is_public">false</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">xmldata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">status</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      </array>
+    </record>
+  </record>
+  <value name="svc_flow_debug_disabled">false</value>
+  <record name="node_hints" javaclass="com.wm.util.Values">
+    <value name="createdBy">ans.rizvi@umerco.com</value>
+    <value name="createdDate">1784321683558</value>
+    <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
+    <value name="lastModifiedDate">1784321683558</value>
+    <value name="displayName">Edi850ToXml</value>
+    <value name="description">Converts an ANSI X12 850 Purchase Order to XML; validates it is an 850 and well-formed, logging on failure via Try/Catch.</value>
+    <record name="stepNodeHints" javaclass="com.wm.util.Values">
+    <null name="/0"/>
+    <record name="/0/0" javaclass="com.wm.util.Values">
+      <value name="name">BRANCH</value>
+      <value name="itemType">CONTROLS</value>
+    </record>
+    <null name="/0/0/0"/>
+    <null name="/0/0/0/0"/>
+    <null name="/0/0/1"/>
+    <record name="/0/0/1/0" javaclass="com.wm.util.Values">
+      <value name="name">EXIT</value>
+      <value name="itemType">CONTROLS</value>
+    </record>
+    <null name="/0/0/1/0/0"/>
+    <record name="/0/1" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">String</value>
+        <value name="groupName">string</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">tokenize</value>
+        <value name="serviceName">pub.string:tokenize</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">2</number>
+      <value name="nodePathNew">0.1</value>
+      <number name="nodeIndex" type="Long">1</number>
+      <number name="lineNumberForDebug" type="Long">2</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/0/1/0"/>
+    <record name="/0/2" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">3</number>
+      <value name="nodePathNew">0.2</value>
+      <number name="nodeIndex" type="Long">2</number>
+      <number name="lineNumberForDebug" type="Long">3</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/0/2/0"/>
+    <record name="/0/3" javaclass="com.wm.util.Values">
+      <value name="name">REPEAT</value>
+      <value name="itemType">CONTROLS</value>
+      <record name="in_array" javaclass="com.wm.util.Values">
+        <value name="name">/segmentList</value>
+        <value name="field_name">segmentList</value>
+        <value name="type">string</value>
+        <value name="dim">1</value>
+        <Boolean name="isLink">false</Boolean>
+        <null name="wrapper_type"/>
+      </record>
+      <value name="nodePathNew">0.3</value>
+      <number name="nodeIndex" type="Long">3</number>
+      <number name="lineNumberForDebug" type="Long">4</number>
+    </record>
+    <record name="/0/3/0" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">5</number>
+      <value name="nodePathNew">0.3.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">5</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/0/3/0/0"/>
+    <record name="/0/4" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">6</number>
+      <value name="nodePathNew">0.4</value>
+      <number name="nodeIndex" type="Long">4</number>
+      <number name="lineNumberForDebug" type="Long">6</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/0/4/0"/>
+    <record name="/0/5" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Xml</value>
+        <value name="groupName">xml</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">xmlStringToXMLNode</value>
+        <value name="serviceName">pub.xml:xmlStringToXMLNode</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">7</number>
+      <value name="nodePathNew">0.5</value>
+      <number name="nodeIndex" type="Long">5</number>
+      <number name="lineNumberForDebug" type="Long">7</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/0/5/0"/>
+    <null name="/1"/>
+    <record name="/1/0" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Flow</value>
+        <value name="groupName">flow</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">getLastError</value>
+        <value name="serviceName">pub.flow:getLastError</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">8</number>
+      <value name="nodePathNew">1.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">8</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/1/0/0"/>
+    <record name="/1/1" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">9</number>
+      <value name="nodePathNew">1.1</value>
+      <number name="nodeIndex" type="Long">1</number>
+      <number name="lineNumberForDebug" type="Long">9</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/1/1/0"/>
+    <record name="/1/2" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Flow</value>
+        <value name="groupName">flow</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">debugLog</value>
+        <value name="serviceName">pub.flow:debugLog</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">10</number>
+      <value name="nodePathNew">1.2</value>
+      <number name="nodeIndex" type="Long">2</number>
+      <number name="lineNumberForDebug" type="Long">10</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/1/2/0"/>
+    </record>
+  </record>
+</Values>
