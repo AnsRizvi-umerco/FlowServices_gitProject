@@ -1,0 +1,9 @@
+{
+  "controlNumber": "0001",
+  "ackFunctionalGroup": "PO",
+  "ackGroupControlNumber": "1",
+  "ackTransactionSet": "850",
+  "ackTransactionSetControl": "0001",
+  "ackCode": "A",
+  "numberAccepted": "1"
+}
