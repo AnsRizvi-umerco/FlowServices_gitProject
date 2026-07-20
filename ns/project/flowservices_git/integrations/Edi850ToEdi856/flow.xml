@@ -104,7 +104,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/begRest;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Split BEG remainder into segments" SERVICE="pub.string:tokenize">
@@ -183,22 +183,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">begRest</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/begRest;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -216,7 +210,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[0];1;0" TO="/begSeg;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Split BEG into elements" SERVICE="pub.string:tokenize">
@@ -295,22 +289,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">begSeg</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[0]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/begSeg;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -328,23 +316,32 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[2];1;0" TO="/poNumber;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract PO number and date" TIMEOUT="" MODE="STANDALONE">
+  <INVOKE NAME="Extract PO date" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
+    <MAP MODE="INPUT">
+      <COMMENT></COMMENT>
+      <MAPTARGET><Values version="2.0">
     <value name="node_type">record</value>
     <value name="node_subtype">unknown</value>
     <value name="is_public">false</value>
+    <value name="field_name">tokenizeInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
     <array name="rec_fields" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
         <value name="is_public">false</value>
-        <value name="field_name">poNumber</value>
+        <value name="field_name">inString</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -352,10 +349,33 @@
         <value name="is_global">false</value>
       </record>
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
         <value name="is_public">false</value>
-        <value name="field_name">poDate</value>
+        <value name="field_name">delim</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+          <value name="field_usereditable">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">useDelimsAsSet</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -364,7 +384,7 @@
       </record>
     </array>
   </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
+      <MAPSOURCE><Values version="2.0">
     <value name="node_type">record</value>
     <value name="node_subtype">unknown</value>
     <value name="is_public">false</value>
@@ -375,30 +395,36 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">begSeg</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set poNumber" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/poNumber;1;0">
+      <MAPCOPY FROM="/begSeg;1;0" TO="/inString;1;0"/>
+      <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
-  <value name="xml">%valueList[2]%</value>
+  <value name="xml">**</value>
 </Values>
 </DATA>
       </MAPSET>
-      <MAPSET NAME="Set poDate" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/poDate;1;0">
+      <MAPSET NAME="Set useDelimsAsSet" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/useDelimsAsSet;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
-  <value name="xml">%valueList[3]%</value>
+  <value name="xml">false</value>
 </Values>
 </DATA>
       </MAPSET>
-  </MAP>
+    </MAP>
+    <MAP MODE="OUTPUT">
+      <COMMENT></COMMENT>
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/poDate;1;0"/>
+    </MAP>
+  </INVOKE>
   <INVOKE NAME="Split on N1BY" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -502,7 +528,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/byrRest;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Split buyer remainder into segments" SERVICE="pub.string:tokenize">
@@ -581,22 +607,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">byrRest</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/byrRest;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -614,7 +634,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[0];1;0" TO="/byrSeg;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Split buyer into elements" SERVICE="pub.string:tokenize">
@@ -693,22 +713,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">byrSeg</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[0]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/byrSeg;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -726,95 +740,11 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[0];1;0" TO="/buyerName;1;0"/>
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/buyerQual;1;0"/>
+      <MAPCOPY FROM="/valueList[2];1;0" TO="/buyerId;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract buyer" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">buyerName</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">buyerQual</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">buyerId</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set buyerName" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/buyerName;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[0]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-      <MAPSET NAME="Set buyerQual" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/buyerQual;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-      <MAPSET NAME="Set buyerId" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/buyerId;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[2]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <INVOKE NAME="Split on PO1" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -918,77 +848,10 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/line1Raw;1;0"/>
+      <MAPCOPY FROM="/valueList[2];1;0" TO="/line2Raw;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract line raws" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">line1Raw</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">line2Raw</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set line1Raw" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/line1Raw;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-      <MAPSET NAME="Set line2Raw" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/line2Raw;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[2]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <INVOKE NAME="Split line 1 into elements" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -1065,22 +928,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">line1Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%line1Raw%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/line1Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1098,77 +955,10 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/qty1;1;0"/>
+      <MAPCOPY FROM="/valueList[2];1;0" TO="/uom1;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract line 1 qty and uom" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">qty1</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">uom1</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set qty1" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/qty1;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-      <MAPSET NAME="Set uom1" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/uom1;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[2]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <INVOKE NAME="Split line 1 on BP" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -1245,22 +1035,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">line1Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%line1Raw%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/line1Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1278,7 +1062,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/code1Raw;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Trim line 1 code at segment end" SERVICE="pub.string:tokenize">
@@ -1357,22 +1141,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">code1Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/code1Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1390,59 +1168,9 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[0];1;0" TO="/code1;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract line 1 code" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">code1</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set code1" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/code1;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[0]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <INVOKE NAME="Split line 2 into elements" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -1519,22 +1247,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">line2Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%line2Raw%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/line2Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1552,77 +1274,10 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/qty2;1;0"/>
+      <MAPCOPY FROM="/valueList[2];1;0" TO="/uom2;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract line 2 qty and uom" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">qty2</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">uom2</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set qty2" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/qty2;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-      <MAPSET NAME="Set uom2" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/uom2;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[2]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <INVOKE NAME="Split line 2 on BP" SERVICE="pub.string:tokenize">
     <COMMENT></COMMENT>
     <MAP MODE="INPUT">
@@ -1699,22 +1354,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">line2Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%line2Raw%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/line2Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1732,7 +1381,7 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[1];1;0" TO="/code2Raw;1;0"/>
     </MAP>
   </INVOKE>
   <INVOKE NAME="Trim line 2 code at segment end" SERVICE="pub.string:tokenize">
@@ -1811,22 +1460,16 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
+        <value name="field_name">code2Raw</value>
         <value name="field_type">string</value>
-        <value name="field_dim">1</value>
+        <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
   </Values></MAPSOURCE>
-      <MAPSET NAME="Set inString" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/inString;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[1]%</value>
-</Values>
-</DATA>
-      </MAPSET>
+      <MAPCOPY FROM="/code2Raw;1;0" TO="/inString;1;0"/>
       <MAPSET NAME="Set delim" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/delim;1;0">
         <DATA ENCODING="XMLValues" I18N="true">
 <Values version="2.0">
@@ -1844,59 +1487,9 @@
     </MAP>
     <MAP MODE="OUTPUT">
       <COMMENT></COMMENT>
-
+      <MAPCOPY FROM="/valueList[0];1;0" TO="/code2;1;0"/>
     </MAP>
   </INVOKE>
-  <MAP NAME="Extract line 2 code" TIMEOUT="" MODE="STANDALONE">
-    <COMMENT></COMMENT>
-    <MAPTARGET><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">code2</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-  </Values></MAPTARGET>
-    <MAPSOURCE><Values version="2.0">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">valueList</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">1</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_soap_array_encoding_used">false</value>
-      </record>
-    </array>
-  </Values></MAPSOURCE>
-      <MAPSET NAME="Set code2" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/code2;1;0">
-        <DATA ENCODING="XMLValues" I18N="true">
-<Values version="2.0">
-  <value name="xml">%valueList[0]%</value>
-</Values>
-</DATA>
-      </MAPSET>
-  </MAP>
   <MAP NAME="Build 856" TIMEOUT="" MODE="STANDALONE">
     <COMMENT></COMMENT>
     <MAPTARGET><Values version="2.0">
