@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "sender": "ACME",
+    "receiver": "UMERCO",
+    "documentType": "X12_850",
+    "documentId": "PO-9001",
+    "userStatus": "",
+    "groupId": "",
+    "conversationId": "",
+    "attributes": {}
+  },
+  "request": {
+    "largeDoc": false,
+    "content": "SVNBKjAwKiAgICAgICAgICAqMDAqICAgICAgICAgICpaWipVTUVSQ08gICAgICAgICAqWloqQUNNRSAgICAgICAgICAgKjI2MDcxOCoxMjAwKlUqMDA0MDEqMDAwMDAwMDAxKjAqUCo+fkdTKlBPKlVNRVJDTypBQ01FKjIwMjYwNzE4KjEyMDAqMSpYKjAwNDAxMH5TVCo4NTAqMDAwMX5CRUcqMDAqTkUqUE8tOTAwMSoqMjAyNjA3MTh+TjEqQlkqQWNtZSBSZXRhaWwgR21iSCo5MipBQ01FflBPMSoxKjEwMCpFQSo5LjUwKipCUCpTS1UtMDAxflBPMSoyKjQwKkVBKjEyLjI1KipCUCpTS1UtMDAyfkNUVCoyflNFKjcqMDAwMX5HRSoxKjF+SUVBKjEqMDAwMDAwMDAxfg==",
+    "contentPartNames": [],
+    "type": "EDI",
+    "encoding": "UTF-8"
+  }
+}
