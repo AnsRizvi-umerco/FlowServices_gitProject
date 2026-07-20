@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">connectorAccount</value>
+  <value name="node_subtype">httpAccount</value>
+  <value name="node_nsName">project.flowservices_git.http.connections:anshttp</value>
+  <value name="node_pkg">FlowServices_gitProject</value>
+  <value name="is_public">false</value>
+  <value name="assetId">FlowServices_gitProject.project.flowservices_git.http.connections:anshttp</value>
+  <value name="connectionName">anshttp</value>
+  <value name="auth">none</value>
+  <value name="checkCRL">false</value>
+  <value name="cipherSuites"></value>
+  <value name="connectTimeout">300000</value>
+  <value name="followRedirect"></value>
+  <value name="hostNameVerification">false</value>
+  <value name="keepAliveTimeout">180</value>
+  <null name="keyAlias"/>
+  <null name="keystoreAlias"/>
+  <value name="maxKeepAliveConnections">0</value>
+  <value name="newSession">no</value>
+  <value name="pass"></value>
+  <value name="timeout">300000</value>
+  <value name="token"></value>
+  <null name="trustStore"/>
+  <value name="url">https://webhook.site/8760e27d-c68e-4789-9048-5c861faa6961</value>
+  <value name="user"></value>
+</Values>
