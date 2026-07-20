@@ -321,7 +321,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
-    <value name="lastModifiedDate">1784583651946</value>
+    <value name="lastModifiedDate">1784583994434</value>
     <value name="displayName">Edi850ToEdi856</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -785,6 +785,68 @@
         <Boolean name="xmlMapsetSupported">true</Boolean>
         <null name="outputMapSet"/>
         <value name="nodePathForDebug">18</value>
+      </record>
+      <record name="/19" javaclass="com.wm.util.Values">
+        <value name="name">HTTP Connector</value>
+        <value name="itemType">APPS</value>
+        <record name="operation" javaclass="com.wm.util.Values">
+          <value name="connectorID">httpconnector</value>
+          <value name="description">Send an http request</value>
+          <value name="isCustom">false</value>
+          <value name="isDynamicOperation">false</value>
+          <value name="isImportedOperation">false</value>
+          <value name="nsName">pub.client:http</value>
+          <value name="operationName">httpRequest</value>
+          <value name="operationType">actions</value>
+          <null name="packageName"/>
+          <value name="projectName">project.flowservices_git</value>
+        </record>
+        <value name="id">httpconnector</value>
+        <value name="providerName">TechnologyConnector</value>
+        <value name="allowCustomOperations">false</value>
+        <value name="appType">predefined</value>
+        <Boolean name="hasAccount">true</Boolean>
+        <record name="connection" javaclass="com.wm.util.Values">
+          <value name="connectionName">anshttp</value>
+          <value name="connectionType">http</value>
+          <null name="description"/>
+        </record>
+        <value name="connectionNSName">project.flowservices_git.http.connections:anshttp</value>
+        <value name="connectionType">http</value>
+        <value name="type">http</value>
+        <value name="version">1</value>
+        <null name="packageName"/>
+        <value name="description">HTTP connector in cloud</value>
+        <null name="extensionName"/>
+        <null name="certified"/>
+        <null name="registry"/>
+        <null name="category"/>
+        <null name="registeredDate"/>
+        <Boolean name="installed">true</Boolean>
+        <Boolean name="latest">false</Boolean>
+        <Boolean name="allowDeleteApplication">false</Boolean>
+        <Boolean name="allowUpdateApplication">false</Boolean>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <array name="map" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="transformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <null name="mapSet"/>
+        <array name="inputMap" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <Boolean name="accountReferenceResolved">true</Boolean>
+        <number name="ui_step_index" type="Long">20</number>
+        <value name="nodePathNew">19</value>
+        <number name="nodeIndex" type="Long">19</number>
+        <number name="lineNumberForDebug" type="Long">20</number>
+        <Boolean name="xmlMapsetSupported">true</Boolean>
+        <null name="outputMapSet"/>
       </record>
     </record>
   </record>
