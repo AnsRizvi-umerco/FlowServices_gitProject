@@ -321,7 +321,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
-    <value name="lastModifiedDate">1784571953749</value>
+    <value name="lastModifiedDate">1784571998030</value>
     <value name="displayName">B2BReceiveXmlToEdi810</value>
     <value name="description"></value>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
@@ -368,6 +368,7 @@
         <null name="outputMapSet"/>
         <Boolean name="serviceReferenceResolved">true</Boolean>
         <value name="nodePathForDebug">1</value>
+        <Boolean name="xmlMapsetSupported">true</Boolean>
       </record>
       <record name="/2" javaclass="com.wm.util.Values">
         <null name="name"/>
