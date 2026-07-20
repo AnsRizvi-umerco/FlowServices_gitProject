@@ -604,6 +604,27 @@
       <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
     </record>
     <null name="/13/0"/>
+    <record name="/14" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Flow</value>
+        <value name="groupName">flow</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">debugLog</value>
+        <value name="serviceName">pub.flow:debugLog</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">19</number>
+      <value name="nodePathNew">14</value>
+      <number name="nodeIndex" type="Long">14</number>
+      <number name="lineNumberForDebug" type="Long">19</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/14/0"/>
     </record>
   </record>
 </Values>
