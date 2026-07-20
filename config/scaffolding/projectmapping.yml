@@ -1,0 +1,15 @@
+version: "1.0"
+projectName: FlowServices_gitProject
+runtimes:
+- runtimeAlias: Cloud Designtime
+  assets:
+  - name: B2BReceiveXmlToEdi810_API
+    type: REST
+    path: /invoice
+    action: POST
+    reference: fld_111470798_stage00.projects.flfdaa7061935f4b9ba9fdfc2d043899c1.WmPackageServiceProvider.project.flowservices_git.integrations:B2BReceiveXmlToEdi810
+  - name: B2BReceiveXmlToEdi810_API
+    type: REST
+    path: /test
+    action: POST
+    reference: fld_111470798_stage00.projects.flfdaa7061935f4b9ba9fdfc2d043899c1.WmPackageServiceProvider.project.flowservices_git.integrations:B2BReceiveXmlToEdi810
