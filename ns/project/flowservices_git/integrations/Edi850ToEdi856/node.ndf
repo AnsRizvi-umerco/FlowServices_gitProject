@@ -321,7 +321,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
-    <value name="lastModifiedDate">1784582111352</value>
+    <value name="lastModifiedDate">1784583651946</value>
     <value name="displayName">Edi850ToEdi856</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -744,11 +744,11 @@
         <value name="appType">predefined</value>
         <Boolean name="hasAccount">true</Boolean>
         <record name="connection" javaclass="com.wm.util.Values">
-          <value name="connectionName">webMethods_ioB2B_7</value>
+          <value name="connectionName">ans_test</value>
           <value name="connectionType"></value>
           <null name="description"/>
         </record>
-        <value name="connectionNSName">webMethods_ioB2B_7</value>
+        <value name="connectionNSName">ans_test</value>
         <value name="connectionType"></value>
         <value name="type">REST</value>
         <value name="version">2</value>
@@ -783,8 +783,8 @@
         <number name="nodeIndex" type="Long">18</number>
         <number name="lineNumberForDebug" type="Long">19</number>
         <Boolean name="xmlMapsetSupported">true</Boolean>
-        <value name="nodePathForDebug">18</value>
         <null name="outputMapSet"/>
+        <value name="nodePathForDebug">18</value>
       </record>
     </record>
   </record>
