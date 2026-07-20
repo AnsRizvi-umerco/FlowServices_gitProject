@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Values version="2.0">
   <value name="svc_type">flow</value>
   <value name="svc_subtype">unknown</value>
@@ -10,25 +11,29 @@
       <value name="is_public">false</value>
       <value name="field_type">record</value>
       <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <value name="form_qualified">false</value>
+      <value name="is_global">false</value>
       <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">field</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-          <value name="field_usereditable">false</value>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">field</value>
+          <value name="node_subtype">unknown</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+            <value name="field_usereditable">false</value>
+          </record>
+          <value name="is_public">false</value>
+          <value name="field_name">edi850</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <value name="form_qualified">false</value>
+          <value name="is_global">false</value>
         </record>
-        <value name="is_public">false</value>
-        <value name="field_name">edi850</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       </array>
+      <value name="modifiable">true</value>
     </record>
     <record name="sig_out" javaclass="com.wm.util.Values">
       <value name="node_type">record</value>
@@ -36,421 +41,490 @@
       <value name="is_public">false</value>
       <value name="field_type">record</value>
       <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <value name="form_qualified">false</value>
+      <value name="is_global">false</value>
       <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">field</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-          <value name="field_usereditable">false</value>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">field</value>
+          <value name="node_subtype">unknown</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+            <value name="field_usereditable">false</value>
+          </record>
+          <value name="is_public">false</value>
+          <value name="field_name">edi856</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <value name="form_qualified">false</value>
+          <value name="is_global">false</value>
         </record>
-        <value name="is_public">false</value>
-        <value name="field_name">edi856</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       </array>
+      <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="svc_flow_debug_disabled">false</value>
+  <value name="description"></value>
+  <value name="stateless">yes</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="icontext_policy">$null</value>
+  <value name="system_service">no</value>
+  <value name="retry_max">0</value>
+  <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">ans.rizvi@umerco.com</value>
-    <value name="createdDate">1784578818688</value>
     <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
-    <value name="lastModifiedDate">1784578818688</value>
+    <value name="lastModifiedDate">1784579087524</value>
     <value name="displayName">Edi850ToEdi856</value>
-    <value name="description">Converts an ANSI X12 850 Purchase Order into an X12 856 Advance Ship Notice (ASN). Parses the 850 with pub.string only (DAFS-safe) into scalar fields, builds an HL Shipment/Order/Item hierarchy for the two PO1 lines, and computes the SE segment count. Ship-level values (carrier, BOL, ship date) are placeholders/derived; shipped qty = ordered qty.</value>
+    <value name="description"></value>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
-    <record name="/0" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/0" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">1</number>
+        <value name="nodePathNew">0</value>
+        <number name="nodeIndex" type="Long">0</number>
+        <number name="lineNumberForDebug" type="Long">1</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">0</value>
+        <Boolean name="xmlMapsetSupported">true</Boolean>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/1" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">2</number>
+        <value name="nodePathNew">1</value>
+        <number name="nodeIndex" type="Long">1</number>
+        <number name="lineNumberForDebug" type="Long">2</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">1</value>
       </record>
-      <number name="ui_step_index" type="Long">1</number>
-      <value name="nodePathNew">0</value>
-      <number name="nodeIndex" type="Long">0</number>
-      <number name="lineNumberForDebug" type="Long">1</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/0/0"/>
-    <record name="/1" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/2" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">3</number>
+        <value name="nodePathNew">2</value>
+        <number name="nodeIndex" type="Long">2</number>
+        <number name="lineNumberForDebug" type="Long">3</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">2</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/3" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">4</number>
+        <value name="nodePathNew">3</value>
+        <number name="nodeIndex" type="Long">3</number>
+        <number name="lineNumberForDebug" type="Long">4</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">3</value>
       </record>
-      <number name="ui_step_index" type="Long">2</number>
-      <value name="nodePathNew">1</value>
-      <number name="nodeIndex" type="Long">1</number>
-      <number name="lineNumberForDebug" type="Long">2</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/1/0"/>
-    <record name="/2" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/4" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">5</number>
+        <value name="nodePathNew">4</value>
+        <number name="nodeIndex" type="Long">4</number>
+        <number name="lineNumberForDebug" type="Long">5</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">4</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/5" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">6</number>
+        <value name="nodePathNew">5</value>
+        <number name="nodeIndex" type="Long">5</number>
+        <number name="lineNumberForDebug" type="Long">6</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">5</value>
       </record>
-      <number name="ui_step_index" type="Long">3</number>
-      <value name="nodePathNew">2</value>
-      <number name="nodeIndex" type="Long">2</number>
-      <number name="lineNumberForDebug" type="Long">3</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/2/0"/>
-    <record name="/3" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/6" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">7</number>
+        <value name="nodePathNew">6</value>
+        <number name="nodeIndex" type="Long">6</number>
+        <number name="lineNumberForDebug" type="Long">7</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">6</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/7" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">8</number>
+        <value name="nodePathNew">7</value>
+        <number name="nodeIndex" type="Long">7</number>
+        <number name="lineNumberForDebug" type="Long">8</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">7</value>
       </record>
-      <number name="ui_step_index" type="Long">4</number>
-      <value name="nodePathNew">3</value>
-      <number name="nodeIndex" type="Long">3</number>
-      <number name="lineNumberForDebug" type="Long">4</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/3/0"/>
-    <record name="/4" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/8" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">9</number>
+        <value name="nodePathNew">8</value>
+        <number name="nodeIndex" type="Long">8</number>
+        <number name="lineNumberForDebug" type="Long">9</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">8</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/9" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">10</number>
+        <value name="nodePathNew">9</value>
+        <number name="nodeIndex" type="Long">9</number>
+        <number name="lineNumberForDebug" type="Long">10</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">9</value>
       </record>
-      <number name="ui_step_index" type="Long">5</number>
-      <value name="nodePathNew">4</value>
-      <number name="nodeIndex" type="Long">4</number>
-      <number name="lineNumberForDebug" type="Long">5</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/4/0"/>
-    <record name="/5" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/10" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">11</number>
+        <value name="nodePathNew">10</value>
+        <number name="nodeIndex" type="Long">10</number>
+        <number name="lineNumberForDebug" type="Long">11</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">10</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/11" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">12</number>
+        <value name="nodePathNew">11</value>
+        <number name="nodeIndex" type="Long">11</number>
+        <number name="lineNumberForDebug" type="Long">12</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">11</value>
       </record>
-      <number name="ui_step_index" type="Long">6</number>
-      <value name="nodePathNew">5</value>
-      <number name="nodeIndex" type="Long">5</number>
-      <number name="lineNumberForDebug" type="Long">6</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/5/0"/>
-    <record name="/6" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/12" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">13</number>
+        <value name="nodePathNew">12</value>
+        <number name="nodeIndex" type="Long">12</number>
+        <number name="lineNumberForDebug" type="Long">13</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">12</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/13" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">14</number>
+        <value name="nodePathNew">13</value>
+        <number name="nodeIndex" type="Long">13</number>
+        <number name="lineNumberForDebug" type="Long">14</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">13</value>
       </record>
-      <number name="ui_step_index" type="Long">7</number>
-      <value name="nodePathNew">6</value>
-      <number name="nodeIndex" type="Long">6</number>
-      <number name="lineNumberForDebug" type="Long">7</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/6/0"/>
-    <record name="/7" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/14" javaclass="com.wm.util.Values">
+        <value name="itemType">CONTROLS</value>
+        <value name="name">TRANSFORM</value>
+        <number name="ui_step_index" type="Long">15</number>
+        <value name="nodePathNew">14</value>
+        <number name="nodeIndex" type="Long">14</number>
+        <number name="lineNumberForDebug" type="Long">15</number>
+        <array name="map" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="transformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <value name="nodePathForDebug">14</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <null name="/14/0"/>
+      <record name="/15" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">String</value>
+          <value name="groupName">string</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">tokenize</value>
+          <value name="serviceName">pub.string:tokenize</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">16</number>
+        <value name="nodePathNew">15</value>
+        <number name="nodeIndex" type="Long">15</number>
+        <number name="lineNumberForDebug" type="Long">16</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">15</value>
       </record>
-      <number name="ui_step_index" type="Long">8</number>
-      <value name="nodePathNew">7</value>
-      <number name="nodeIndex" type="Long">7</number>
-      <number name="lineNumberForDebug" type="Long">8</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/7/0"/>
-    <record name="/8" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/16" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">List</value>
+          <value name="groupName">list</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">sizeOfList</value>
+          <value name="serviceName">pub.list:sizeOfList</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">17</number>
+        <value name="nodePathNew">16</value>
+        <number name="nodeIndex" type="Long">16</number>
+        <number name="lineNumberForDebug" type="Long">17</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">16</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
+      <record name="/17" javaclass="com.wm.util.Values">
+        <null name="name"/>
+        <value name="itemType">SERVICES</value>
+        <record name="serviceInfo" javaclass="com.wm.util.Values">
+          <value name="groupDisplayName">Math</value>
+          <value name="groupName">math</value>
+          <null name="services"/>
+        </record>
+        <record name="serviceName" javaclass="com.wm.util.Values">
+          <value name="displayName">addInts</value>
+          <value name="serviceName">pub.math:addInts</value>
+          <value name="transformerSupport">true</value>
+        </record>
+        <number name="ui_step_index" type="Long">18</number>
+        <value name="nodePathNew">17</value>
+        <number name="nodeIndex" type="Long">17</number>
+        <number name="lineNumberForDebug" type="Long">18</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">17</value>
       </record>
-      <number name="ui_step_index" type="Long">9</number>
-      <value name="nodePathNew">8</value>
-      <number name="nodeIndex" type="Long">8</number>
-      <number name="lineNumberForDebug" type="Long">9</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/8/0"/>
-    <record name="/9" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
+      <record name="/18" javaclass="com.wm.util.Values">
+        <value name="itemType">CONTROLS</value>
+        <value name="name">TRANSFORM</value>
+        <number name="ui_step_index" type="Long">19</number>
+        <value name="nodePathNew">18</value>
+        <number name="nodeIndex" type="Long">18</number>
+        <number name="lineNumberForDebug" type="Long">19</number>
+        <array name="map" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="transformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <value name="nodePathForDebug">18</value>
       </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">10</number>
-      <value name="nodePathNew">9</value>
-      <number name="nodeIndex" type="Long">9</number>
-      <number name="lineNumberForDebug" type="Long">10</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/9/0"/>
-    <record name="/10" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">11</number>
-      <value name="nodePathNew">10</value>
-      <number name="nodeIndex" type="Long">10</number>
-      <number name="lineNumberForDebug" type="Long">11</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/10/0"/>
-    <record name="/11" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">12</number>
-      <value name="nodePathNew">11</value>
-      <number name="nodeIndex" type="Long">11</number>
-      <number name="lineNumberForDebug" type="Long">12</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/11/0"/>
-    <record name="/12" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">13</number>
-      <value name="nodePathNew">12</value>
-      <number name="nodeIndex" type="Long">12</number>
-      <number name="lineNumberForDebug" type="Long">13</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/12/0"/>
-    <record name="/13" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">14</number>
-      <value name="nodePathNew">13</value>
-      <number name="nodeIndex" type="Long">13</number>
-      <number name="lineNumberForDebug" type="Long">14</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/13/0"/>
-    <record name="/14" javaclass="com.wm.util.Values">
-      <value name="itemType">CONTROLS</value>
-      <value name="name">TRANSFORM</value>
-      <number name="ui_step_index" type="Long">15</number>
-      <value name="nodePathNew">14</value>
-      <number name="nodeIndex" type="Long">14</number>
-      <number name="lineNumberForDebug" type="Long">15</number>
-      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
-    </record>
-    <null name="/14/0"/>
-    <record name="/15" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">String</value>
-        <value name="groupName">string</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">tokenize</value>
-        <value name="serviceName">pub.string:tokenize</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">16</number>
-      <value name="nodePathNew">15</value>
-      <number name="nodeIndex" type="Long">15</number>
-      <number name="lineNumberForDebug" type="Long">16</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/15/0"/>
-    <record name="/16" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">List</value>
-        <value name="groupName">list</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">sizeOfList</value>
-        <value name="serviceName">pub.list:sizeOfList</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">17</number>
-      <value name="nodePathNew">16</value>
-      <number name="nodeIndex" type="Long">16</number>
-      <number name="lineNumberForDebug" type="Long">17</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/16/0"/>
-    <record name="/17" javaclass="com.wm.util.Values">
-      <null name="name"/>
-      <value name="itemType">SERVICES</value>
-      <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">Math</value>
-        <value name="groupName">math</value>
-        <null name="services"/>
-      </record>
-      <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">addInts</value>
-        <value name="serviceName">pub.math:addInts</value>
-        <value name="transformerSupport">true</value>
-      </record>
-      <number name="ui_step_index" type="Long">18</number>
-      <value name="nodePathNew">17</value>
-      <number name="nodeIndex" type="Long">17</number>
-      <number name="lineNumberForDebug" type="Long">18</number>
-      <null name="mapSet"/>
-      <null name="outputMapSet"/>
-    </record>
-    <null name="/17/0"/>
-    <record name="/18" javaclass="com.wm.util.Values">
-      <value name="itemType">CONTROLS</value>
-      <value name="name">TRANSFORM</value>
-      <number name="ui_step_index" type="Long">19</number>
-      <value name="nodePathNew">18</value>
-      <number name="nodeIndex" type="Long">18</number>
-      <number name="lineNumberForDebug" type="Long">19</number>
-      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
-      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
-    </record>
-    <null name="/18/0"/>
+      <null name="/18/0"/>
     </record>
   </record>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">2</value>
+  <null name="auditfields_input"/>
+  <null name="auditfields_output"/>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+  <array name="allowedHTTPMethods" type="value" depth="1">
+    <value>TRACE</value>
+    <value>HEAD</value>
+    <value>DELETE</value>
+    <value>POST</value>
+    <value>GET</value>
+    <value>OPTIONS</value>
+    <value>PUT</value>
+    <value>PATCH</value>
+  </array>
+  <value name="pipeline_option">1</value>
+  <null name="originURI"/>
+  <value name="modifiable">true</value>
+  <value name="is_public">false</value>
+  <value name="is_visible">true</value>
 </Values>
