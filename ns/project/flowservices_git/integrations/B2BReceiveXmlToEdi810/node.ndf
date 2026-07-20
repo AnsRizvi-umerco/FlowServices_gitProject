@@ -293,11 +293,11 @@
   <value name="svc_flow_debug_disabled">false</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="createdBy">ans.rizvi@umerco.com</value>
-    <value name="createdDate">1784563103936</value>
+    <value name="createdDate">1784569388582</value>
     <value name="lastModifiedBy">ans.rizvi@umerco.com</value>
-    <value name="lastModifiedDate">1784563103936</value>
+    <value name="lastModifiedDate">1784569388582</value>
     <value name="displayName">B2BReceiveXmlToEdi810</value>
-    <value name="description">B2B front-end: base64-decodes the B2B document content into an XML string and invokes Xml810ToEdi810.</value>
+    <value name="description">B2B front-end: base64-decodes the document content to XML and converts it to X12 810 inline (no sub-service invoke).</value>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
     <record name="/0" javaclass="com.wm.util.Values">
       <null name="name"/>
@@ -345,13 +345,13 @@
       <null name="name"/>
       <value name="itemType">SERVICES</value>
       <record name="serviceInfo" javaclass="com.wm.util.Values">
-        <value name="groupDisplayName">integrations</value>
-        <value name="groupName">project.flowservices_git.integrations</value>
+        <value name="groupDisplayName">Xml</value>
+        <value name="groupName">xml</value>
         <null name="services"/>
       </record>
       <record name="serviceName" javaclass="com.wm.util.Values">
-        <value name="displayName">Xml810ToEdi810</value>
-        <value name="serviceName">project.flowservices_git.integrations:Xml810ToEdi810</value>
+        <value name="displayName">xmlStringToXMLNode</value>
+        <value name="serviceName">pub.xml:xmlStringToXMLNode</value>
         <value name="transformerSupport">true</value>
       </record>
       <number name="ui_step_index" type="Long">3</number>
@@ -362,6 +362,248 @@
       <null name="outputMapSet"/>
     </record>
     <null name="/2/0"/>
+    <record name="/3" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Xml</value>
+        <value name="groupName">xml</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">xmlNodeToDocument</value>
+        <value name="serviceName">pub.xml:xmlNodeToDocument</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">4</number>
+      <value name="nodePathNew">3</value>
+      <number name="nodeIndex" type="Long">3</number>
+      <number name="lineNumberForDebug" type="Long">4</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/3/0"/>
+    <record name="/4" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">5</number>
+      <value name="nodePathNew">4</value>
+      <number name="nodeIndex" type="Long">4</number>
+      <number name="lineNumberForDebug" type="Long">5</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/4/0"/>
+    <record name="/5" javaclass="com.wm.util.Values">
+      <value name="name">REPEAT</value>
+      <value name="itemType">CONTROLS</value>
+      <record name="in_array" javaclass="com.wm.util.Values">
+        <value name="name">/document/Invoice/References/Reference</value>
+        <value name="field_name">Reference</value>
+        <value name="type">record</value>
+        <value name="dim">1</value>
+        <Boolean name="isLink">false</Boolean>
+        <null name="wrapper_type"/>
+      </record>
+      <value name="nodePathNew">5</value>
+      <number name="nodeIndex" type="Long">5</number>
+      <number name="lineNumberForDebug" type="Long">6</number>
+    </record>
+    <record name="/5/0" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">7</number>
+      <value name="nodePathNew">5.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">7</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/5/0/0"/>
+    <record name="/6" javaclass="com.wm.util.Values">
+      <value name="name">REPEAT</value>
+      <value name="itemType">CONTROLS</value>
+      <record name="in_array" javaclass="com.wm.util.Values">
+        <value name="name">/document/Invoice/Dates/Date</value>
+        <value name="field_name">Date</value>
+        <value name="type">record</value>
+        <value name="dim">1</value>
+        <Boolean name="isLink">false</Boolean>
+        <null name="wrapper_type"/>
+      </record>
+      <value name="nodePathNew">6</value>
+      <number name="nodeIndex" type="Long">6</number>
+      <number name="lineNumberForDebug" type="Long">8</number>
+    </record>
+    <record name="/6/0" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">9</number>
+      <value name="nodePathNew">6.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">9</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/6/0/0"/>
+    <record name="/7" javaclass="com.wm.util.Values">
+      <value name="name">REPEAT</value>
+      <value name="itemType">CONTROLS</value>
+      <record name="in_array" javaclass="com.wm.util.Values">
+        <value name="name">/document/Invoice/Parties/Party</value>
+        <value name="field_name">Party</value>
+        <value name="type">record</value>
+        <value name="dim">1</value>
+        <Boolean name="isLink">false</Boolean>
+        <null name="wrapper_type"/>
+      </record>
+      <value name="nodePathNew">7</value>
+      <number name="nodeIndex" type="Long">7</number>
+      <number name="lineNumberForDebug" type="Long">10</number>
+    </record>
+    <record name="/7/0" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">11</number>
+      <value name="nodePathNew">7.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">11</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/7/0/0"/>
+    <record name="/8" javaclass="com.wm.util.Values">
+      <value name="name">REPEAT</value>
+      <value name="itemType">CONTROLS</value>
+      <record name="in_array" javaclass="com.wm.util.Values">
+        <value name="name">/document/Invoice/LineItems/Line</value>
+        <value name="field_name">Line</value>
+        <value name="type">record</value>
+        <value name="dim">1</value>
+        <Boolean name="isLink">false</Boolean>
+        <null name="wrapper_type"/>
+      </record>
+      <value name="nodePathNew">8</value>
+      <number name="nodeIndex" type="Long">8</number>
+      <number name="lineNumberForDebug" type="Long">12</number>
+    </record>
+    <record name="/8/0" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">13</number>
+      <value name="nodePathNew">8.0</value>
+      <number name="nodeIndex" type="Long">0</number>
+      <number name="lineNumberForDebug" type="Long">13</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/8/0/0"/>
+    <record name="/9" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">14</number>
+      <value name="nodePathNew">9</value>
+      <number name="nodeIndex" type="Long">9</number>
+      <number name="lineNumberForDebug" type="Long">14</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/9/0"/>
+    <record name="/10" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">String</value>
+        <value name="groupName">string</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">tokenize</value>
+        <value name="serviceName">pub.string:tokenize</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">15</number>
+      <value name="nodePathNew">10</value>
+      <number name="nodeIndex" type="Long">10</number>
+      <number name="lineNumberForDebug" type="Long">15</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/10/0"/>
+    <record name="/11" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">List</value>
+        <value name="groupName">list</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">sizeOfList</value>
+        <value name="serviceName">pub.list:sizeOfList</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">16</number>
+      <value name="nodePathNew">11</value>
+      <number name="nodeIndex" type="Long">11</number>
+      <number name="lineNumberForDebug" type="Long">16</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/11/0"/>
+    <record name="/12" javaclass="com.wm.util.Values">
+      <null name="name"/>
+      <value name="itemType">SERVICES</value>
+      <record name="serviceInfo" javaclass="com.wm.util.Values">
+        <value name="groupDisplayName">Math</value>
+        <value name="groupName">math</value>
+        <null name="services"/>
+      </record>
+      <record name="serviceName" javaclass="com.wm.util.Values">
+        <value name="displayName">addInts</value>
+        <value name="serviceName">pub.math:addInts</value>
+        <value name="transformerSupport">true</value>
+      </record>
+      <number name="ui_step_index" type="Long">17</number>
+      <value name="nodePathNew">12</value>
+      <number name="nodeIndex" type="Long">12</number>
+      <number name="lineNumberForDebug" type="Long">17</number>
+      <null name="mapSet"/>
+      <null name="outputMapSet"/>
+    </record>
+    <null name="/12/0"/>
+    <record name="/13" javaclass="com.wm.util.Values">
+      <value name="itemType">CONTROLS</value>
+      <value name="name">TRANSFORM</value>
+      <number name="ui_step_index" type="Long">18</number>
+      <value name="nodePathNew">13</value>
+      <number name="nodeIndex" type="Long">13</number>
+      <number name="lineNumberForDebug" type="Long">18</number>
+      <array name="map" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="transformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+      <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object"></array>
+    </record>
+    <null name="/13/0"/>
     </record>
   </record>
 </Values>
