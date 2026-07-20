@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice>
+  <Meta><SourcePartner>FicSeller</SourcePartner><SourceFormat>Canonical_XML</SourceFormat><GeneratedTimestamp>20260526T093000Z</GeneratedTimestamp><CanonicalVersion>2.0</CanonicalVersion></Meta>
+  <Header><InvoiceNumber>INV-2026-001234</InvoiceNumber><InvoiceDate>20260526</InvoiceDate><InvoiceType>DR</InvoiceType><Currency>USD</Currency><PaymentTermsCode>01</PaymentTermsCode><PaymentTermsDescription>Net 30</PaymentTermsDescription><PaymentNetDays>30</PaymentNetDays></Header>
+  <References><Reference><Qualifier>PO</Qualifier><Value>PO-12345</Value></Reference><Reference><Qualifier>CR</Qualifier><Value>CONTRACT-2026-XYZ</Value></Reference></References>
+  <Dates><Date><Qualifier>009</Qualifier><Value>20260625</Value></Date><Date><Qualifier>011</Qualifier><Value>20260524</Value></Date></Dates>
+  <Parties>
+    <Party><EntityCode>SE</EntityCode><Name>FicSeller</Name><IdQualifier>ZZ</IdQualifier><IdValue>321654987</IdValue><Address1>123 Industrial Way</Address1><City>Detroit</City><State>MI</State><PostalCode>48201</PostalCode><Country>US</Country></Party>
+    <Party><EntityCode>BY</EntityCode><Name>FicBuyer01</Name><IdQualifier>ZZ</IdQualifier><IdValue>242424242</IdValue><Address1>456 Commerce Blvd</Address1><City>Chicago</City><State>IL</State><PostalCode>60601</PostalCode><Country>US</Country></Party>
+    <Party><EntityCode>RI</EntityCode><Name>FicSeller - Remit</Name><IdQualifier>ZZ</IdQualifier><IdValue>321654987</IdValue><Address1>PO Box 9988</Address1><City>Detroit</City><State>MI</State><PostalCode>48202</PostalCode><Country>US</Country></Party>
+  </Parties>
+  <LineItems>
+    <Line><LineNumber>1</LineNumber><Quantity>100</Quantity><UnitOfMeasure>EA</UnitOfMeasure><UnitPrice>5.99</UnitPrice><ProductCode>WIDGET-A</ProductCode><ProductDescription>Blue Widget Size A</ProductDescription></Line>
+    <Line><LineNumber>2</LineNumber><Quantity>50</Quantity><UnitOfMeasure>EA</UnitOfMeasure><UnitPrice>12.50</UnitPrice><ProductCode>WIDGET-B</ProductCode><ProductDescription>Red Widget Size B</ProductDescription></Line>
+  </LineItems>
+  <Totals><InvoiceAmount>1224.44</InvoiceAmount><TaxAmount>97.96</TaxAmount><TotalLineItems>2</TotalLineItems></Totals>
+</Invoice>
