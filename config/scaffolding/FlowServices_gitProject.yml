@@ -7,3 +7,96 @@ packages:
   gitUrl: https://github.com/AnsRizvi-umerco
   gitUsername: AnsRizvi-umerco
   gitBranch: main
+services:
+- serviceName: project.flowservices_git.http.connections:anshttp
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: project.flowservices_git.integrations:B2BReceiveXmlToEdi810
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: pub.string:base64Decode
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.string:bytesToString
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.string:tokenize
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.flow:debugLog
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: project.flowservices_git.integrations:Edi837ToXml
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: pub.xml:xmlStringToXMLNode
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.flow:getLastError
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: project.flowservices_git.integrations:Edi850ToEdi856
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: pub.string:replace
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.list:sizeOfList
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: pub.math:addInts
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: fld_common.WmB2BProvider.com_webmethods_integrationcloud_b2b_v2.operations.actions:submit
+  packages:
+  - name: WmB2BProvider
+    version: 12.0.0.0.80
+- serviceName: project.flowservices_git.integrations:Edi850ToXml
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: project.flowservices_git.integrations:Edi855ToXml
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: project.flowservices_git.integrations:Edi997Ack
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: project.flowservices_git.integrations:Edi997ToJson
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: project.flowservices_git.integrations:JsonToEdifactInvoice
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: pub.json:jsonToDocument
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: project.flowservices_git.integrations:Xml810ToEdi810
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
+- serviceName: pub.xml:xmlNodeToDocument
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.875
+- serviceName: project.flowservices_git.integrations:Xml810ToEdi850
+  packages:
+  - name: FlowServices_gitProject
+    version: "1.0"
