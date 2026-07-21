@@ -13,3 +13,8 @@ runtimes:
     path: /test
     action: POST
     reference: fld_111470798_stage00.projects.flfdaa7061935f4b9ba9fdfc2d043899c1.WmPackageServiceProvider.project.flowservices_git.integrations:B2BReceiveXmlToEdi810
+  - name: TESTAPIFLOWS
+    type: REST
+    path: /TESTING
+    action: POST
+    reference: fld_111470798_stage00.projects.flfdaa7061935f4b9ba9fdfc2d043899c1.WmPackageServiceProvider.project.flowservices_git.integrations:B2BReceiveXmlToEdi810
